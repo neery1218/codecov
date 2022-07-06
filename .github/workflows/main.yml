@@ -33,7 +33,9 @@ jobs:
             components: rustfmt, clippy
 
       - name: run coverage.sh
-        run: ./coverage.sh
+        run: |
+          cargo install grcov --version=0.6.1 --force
+          ./coverage.sh
 
       - name: examine
         run: find target/cov
