@@ -34,7 +34,7 @@ jobs:
 
       - name: run coverage.sh
         run: |
-          cargo install grcov --version=0.6.1 --force
+          cargo install grcov --force
           ./coverage.sh
 
       - name: examine
