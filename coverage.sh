@@ -42,7 +42,8 @@ mkdir -p target/cov
 # Mark the base time for a clean room dir
 touch target/cov/before-test
 
-cargo +"$rust_nightly" test --target-dir target/cov
+cargo --version
+cargo test --target-dir target/cov
 
 touch target/cov/after-test
 

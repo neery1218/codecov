@@ -1,5 +1,6 @@
 struct Val {
     a: u64,
+    b: u64,
 }
 
 #[cfg(test)]
