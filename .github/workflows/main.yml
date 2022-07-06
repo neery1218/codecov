@@ -43,4 +43,4 @@ jobs:
       - name: Codecov
         uses: codecov/codecov-action@v3.1.0
         with:
-          directory: target/cov
+          file: target/cov/coby

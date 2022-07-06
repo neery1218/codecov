@@ -13,10 +13,10 @@ if ! which grcov; then
   exit 1
 fi
 
-if [[ ! "$(grcov --version)" =~ "0.6.1" ]]; then
-  echo Error: Required grcov version not installed
-  exit 1
-fi
+# if [[ ! "$(grcov --version)" =~ "0.6.1" ]]; then
+#   echo Error: Required grcov version not installed
+#   exit 1
+# fi
 
 coverageFlags=(-Zprofile)                # Enable coverage
 coverageFlags+=("-Clink-dead-code")      # Dead code should appear red in the report
@@ -67,6 +67,7 @@ find target/cov -type f -name '*.gcda' -newer target/cov/before-test ! -newer ta
   set -x
   grcov target/cov/tmp -t html -o target/cov/$reportName
   grcov target/cov/tmp -t lcov -o target/cov/lcov.info
+  grcov target/cov/tmp -t cobertura -o target/cov/coby
 
   cd target/cov
   tar zcf report.tar.gz $reportName
