@@ -40,4 +40,5 @@ jobs:
 
       - name: Codecov
         uses: codecov/codecov-action@v3.1.0
-        directory: target/cov
+        with:
+          directory: target/cov
